@@ -29,7 +29,7 @@ filter():
 
 ![2_ex_filter()_exclude().png](Screenshots%2F2_ex_filter%28%29_exclude%28%29.png)
 
-execlude():
+exclude():
 ![2_ex_filter()_exclude()_order_by.png](Screenshots%2F2_ex_filter%28%29_exclude%28%29_order_by.png)
 
 ![2_ex_more_requests.png](Screenshots%2F2_ex_more_requests.png)
