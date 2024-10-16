@@ -1,0 +1,15 @@
+{% extends "../base.html" %}
+
+{% block title %}Список продуктов{% endblock %}
+
+{% block content %}
+<h1>Список продуктов</h1>
+<ul>
+   {% for product in products %}
+       <li><a href="{% url 'product_detail' product.pk %}">{{ product.name }}</a> - {{ product.price|default:"Цена не указана" }}</li>
+   {% empty %}
+       <li>Нет продуктов для отображения.</li>
+   {% endfor %}
+</ul>
+
+{% endblock %}
