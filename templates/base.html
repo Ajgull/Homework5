@@ -7,7 +7,6 @@
     <title>{% block title %}My Site{% endblock %}</title>
     <style>
         body {
-            background-image: url("../media/other_photoes/back.png");
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
@@ -56,14 +55,6 @@
 </head>
 <body>
 
-<nav>
-    <ul>
-        <li><a href="{% url 'customer_list' %}">Список клиентов</a></li>
-        <li><a href="{% url 'product_list' %}">Список продуктов</a></li>
-        <li><a href="{% url 'order_list' %}">Список заказов</a></li>
-        <li><a href="{% url 'review_create' %}">Написать отзыв</a></li>
-    </ul>
-</nav>
 
 <div class="container">
     {% block content %}

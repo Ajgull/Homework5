@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}Детали продукта{% endblock %}
+
+{% block content %}
+<h1>{{ product.name }}</h1>
+<p>Цена: {{ product.price }}</p>
+
+
+<a href="{% url 'produce_update' produce.pk %}">Edit</a>
+<a href="{% url 'produce_delete' produce.pk %}">Delete</a>
+<a href="{% url 'produce_shelf' %}">Back to produce list</a>
+{% endblock %}

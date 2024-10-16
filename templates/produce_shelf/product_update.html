@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}Обновить продукт{% endblock %}
+
+{% block content %}
+    <h1>Обновить продукт: {{ product.name }}</h1>
+    
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        <div class="form-group">
+            <label for="name">Название продукта:</label>
+            <input type="text" id="name" name="name" value="{{ product.name }}" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="image">Изображение продукта:</label>
+            <input type="file" id="image" name="image" class="form-control">
+            {% if product.image %}
+                <p>Текущее изображение:</p>
+                <img src="{{ product.image.url }}" alt="{{ product.name }}" style="max-width: 200px; margin-top: 10px;">
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            <label for="status">Статус продукта:</label>
+            <input type="text" id="status" name="status" value="{{ product.status }}" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="price">Цена:</label>
+            <input type="number" id="price" name="price" value="{{ product.price }}" step="0.01" class="form-control" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Сохранить изменения</button>
+    </form>
+
+    <a href="{% url 'produce_shelf' %}" class="btn btn-secondary" style="margin-top: 20px;">Назад к списку товаров</a>
+{% endblock %}

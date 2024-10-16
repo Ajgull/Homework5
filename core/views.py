@@ -1,5 +1,6 @@
 from django.http import HttpResponse
-from django.views.generic import View, TemplateView
+from django.views.generic import View, ListView, DetailView, UpdateView, DeleteView, CreateView
+from django.urls import reverse_lazy
 
 from core.models import Product
 
@@ -9,10 +10,37 @@ class FirstView(View):
         return HttpResponse(' Hi Django!')
 
 
-class ListView(TemplateView):
+class ProductsList(ListView):
+    model = Product
     template_name = 'produce_shelf/produce_shelf.html'
+    context_object_name = 'produces'
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['produce'] = Product.objects.all()
-        return context
+
+class ProductDetail(DetailView):
+    model = Product
+    template_name = 'produce_shelf/produce_detail.html'
+    context_object_name = 'produce'
+
+
+class ProductCreate(CreateView):
+    model = Product
+    fields = ['name', 'price', 'status']
+    template_name = 'produce_shelf/produce_form.html'
+
+    def get_success_url(self):
+        return reverse_lazy('produce_detail', kwargs={'pk': self.object.pk})
+
+
+class ProductUpdate(UpdateView):
+    model = Product
+    template_name = 'produce_shelf/produce_form.html'
+    fields = ['name', 'price']
+
+    def get_success_url(self):
+        return reverse_lazy('produce_shelf')
+
+
+class ProductDelete(DeleteView):
+    model = Product
+    template_name = 'produce_shelf/produce_confirm_delete.html'
+    success_url = reverse_lazy('produce_shelf')
