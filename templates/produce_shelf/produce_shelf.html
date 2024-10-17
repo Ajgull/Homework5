@@ -48,9 +48,27 @@
             text-align: center;
             color: #333;
         }
+
+        .create-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            color: white;
+            background-color: #28a745;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .create-button:hover {
+            background-color: #218838;
+        }
     </style>
 
     <h1>Список товаров</h1>
+    <a href="{% url 'produce_create' %}" class="create-button">Создать товар</a>
     <div class="product-list">
         {% for prod in produces %}
             <div class="product-card">

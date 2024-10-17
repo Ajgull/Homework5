@@ -24,7 +24,7 @@ class ProductDetail(DetailView):
 
 class ProductCreate(CreateView):
     model = Product
-    fields = ['name', 'price', 'status']
+    fields = ['name', 'price', 'status', 'image']
     template_name = 'produce_shelf/produce_form.html'
 
     def get_success_url(self):
@@ -33,7 +33,7 @@ class ProductCreate(CreateView):
 
 class ProductUpdate(UpdateView):
     model = Product
-    template_name = 'produce_shelf/produce_form.html'
+    template_name = 'produce_shelf/produce_update.html'
     fields = ['name', 'price']
 
     def get_success_url(self):

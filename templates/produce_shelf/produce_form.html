@@ -1,15 +1,29 @@
 {% extends "base.html" %}
 
-{% block title %}{% if object %}Edit Product{% else %}Create Product{% endif %}{% endblock %}
+{% block title %}
+    {% if object %}
+        Edit Product
+    {% else %}
+        Create Product
+    {% endif %}
+{% endblock %}
 
 {% block content %}
-<h1>{% if object %}Edit Product{% else %}Create Product{% endif %}</h1>
+    <h1>
+        {% if object %}
+            Edit Product
+        {% else %}
+            Create Product
+        {% endif %}
+    </h1>
 
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Save</button>
-</form>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+            {{ form.as_p }}
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
 
-<a href="{% url 'produce_shelf' %}">Cancel</a>
+    <a href="{% url 'produce_shelf' %}" class="btn btn-secondary">Cancel</a>
 {% endblock %}
