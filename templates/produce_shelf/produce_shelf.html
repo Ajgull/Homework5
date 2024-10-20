@@ -2,6 +2,14 @@
 
 {% block title %}Список товаров{% endblock %}
 
+{% block sidebar %}
+    <form method="get">
+    {% csrf_token %}
+    {{ filter.form.as_p }}
+        <button type="submit" class="btn btn-primary">Find</button>
+    </form>
+{% endblock %}
+
 {% block content %}
     <style>
         .product-list {

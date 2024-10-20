@@ -3,9 +3,15 @@
 {% block title %}Детали продукта{% endblock %}
 
 {% block content %}
-<h1>{{ product.name }}</h1>
-<p>Цена: {{ product.price }}</p>
+<h1>{{ produce.name }}</h1>
+<p>Price: {{ produce.price }} руб.</p>
 
+{% if produce.image %}
+    <img src="{{ produce.image.url }}" style="max-width: 300px; height: auto;">
+{% else %}
+    <p>Изображение не доступно.</p>
+{% endif %}
+    
 
 <a href="{% url 'produce_update' produce.pk %}">Edit</a>
 <a href="{% url 'produce_delete' produce.pk %}">Delete</a>

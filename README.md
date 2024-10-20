@@ -1,3 +1,39 @@
+# Домашнее задание 6
+
+Исходные данные
+
+![Исходные данные.png](Screenshots%2Ffilters%2F%D0%98%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D1%8B%D0%B5%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5.png)
+
+![first_filter.png](Screenshots%2Ffilters%2Ffirst_filter.png)
+
+Проверка на несуществующий товар
+
+![no_such_produce.png](Screenshots%2Ffilters%2Fno_such_produce.png)
+
+Фильтр по цене
+
+![фильтр по цене.png](Screenshots%2Ffilters%2F%D1%84%D0%B8%D0%BB%D1%8C%D1%82%D1%80%20%D0%BF%D0%BE%20%D1%86%D0%B5%D0%BD%D0%B5.png)
+
+Поиск по части названия товара
+
+![icontains.png](Screenshots%2Ffilters%2Ficontains.png)
+
+Поиск по части отзыва о товаре
+
+![Комментарий.png](Screenshots%2Ffilters%2F%D0%9A%D0%BE%D0%BC%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%80%D0%B8%D0%B9.png)
+
+![комментарии в admin.png](Screenshots%2Ffilters%2F%D0%BA%D0%BE%D0%BC%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%80%D0%B8%D0%B8%20%D0%B2%20admin.png)
+
+Поиск по части отзыва и части названи
+![Название и комментраий.png](Screenshots%2Ffilters%2F%D0%9D%D0%B0%D0%B7%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%B8%20%D0%BA%D0%BE%D0%BC%D0%BC%D0%B5%D0%BD%D1%82%D1%80%D0%B0%D0%B8%D0%B9.png)
+
+BooleanFilter по заказанным товарам
+
+![Фильтр по заказанным товарам.png](Screenshots%2Ffilters%2F%D0%A4%D0%B8%D0%BB%D1%8C%D1%82%D1%80%20%D0%BF%D0%BE%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%D0%B0%D0%BC.png)
+
+![Заказанные товары.png](Screenshots%2Ffilters%2F%D0%97%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%D1%8B.png)
+
+
 # Домашнее задание 4
 
 ## Задание 1

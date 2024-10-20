@@ -2,7 +2,10 @@ from django.http import HttpResponse
 from django.views.generic import View, ListView, DetailView, UpdateView, DeleteView, CreateView
 from django.urls import reverse_lazy
 
+from django_filters.views import FilterView
+
 from core.models import Product
+from core import filters
 
 
 class FirstView(View):
@@ -10,10 +13,11 @@ class FirstView(View):
         return HttpResponse(' Hi Django!')
 
 
-class ProductsList(ListView):
+class ProductsList(FilterView):
     model = Product
     template_name = 'produce_shelf/produce_shelf.html'
     context_object_name = 'produces'
+    filterset_class = filters.Product
 
 
 class ProductDetail(DetailView):
