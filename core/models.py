@@ -34,12 +34,7 @@ class Product(models.Model):
     price = models.DecimalField(verbose_name='Price', max_digits=10, decimal_places=2, default=0.00)
     status = models.CharField(max_length=30, choices=consts.PRODUCT_STATUS, default='available')
     image = models.ImageField(upload_to='products/', verbose_name='Product Image', blank=True)
-    categories = models.ManyToManyField(
-        Category,
-        blank=False,
-        verbose_name='categories',
-        related_name='product'
-    )
+    categories = models.ManyToManyField(Category, blank=False, verbose_name='categories', related_name='product')
 
     class Meta:
         verbose_name = 'Product'
@@ -57,12 +52,7 @@ class Order(models.Model):
     created_at = models.DateField(verbose_name='Date of order', auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     customer = models.ForeignKey(
-        Customer,
-        blank=False,
-        null=False,
-        on_delete=models.CASCADE,
-        verbose_name='customer',
-        related_name='orders'
+        Customer, blank=False, null=False, on_delete=models.CASCADE, verbose_name='customer', related_name='orders'
     )
 
     class Meta:
@@ -76,21 +66,11 @@ class Order(models.Model):
 
 class OrderDetail(models.Model):
     order = models.OneToOneField(
-        Order,
-        blank=False,
-        null=False,
-        on_delete=models.CASCADE,
-        verbose_name='order',
-        related_name='details'
+        Order, blank=False, null=False, on_delete=models.CASCADE, verbose_name='order', related_name='details'
     )
     quantity = models.PositiveIntegerField(verbose_name='Quantity')
     product = models.ForeignKey(
-        Product,
-        blank=False,
-        null=False,
-        verbose_name='product',
-        related_name='details',
-        on_delete=models.CASCADE
+        Product, blank=False, null=False, verbose_name='product', related_name='details', on_delete=models.CASCADE
     )
 
     class Meta:
@@ -106,17 +86,9 @@ class Review(models.Model):
     comment = models.TextField(verbose_name='Comment', blank=False)
     written_at = models.DateField(auto_now_add=True)
     product = models.ForeignKey(
-        Product,
-        blank=True,
-        null=True,
-        verbose_name='product',
-        related_name='reviews',
-        on_delete=models.CASCADE
+        Product, blank=True, null=True, verbose_name='product', related_name='reviews', on_delete=models.CASCADE
     )
-    customer = models.ForeignKey(
-        Customer,
-        on_delete=models.CASCADE
-    )
+    customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
 
     class Meta:
         verbose_name = 'Review'

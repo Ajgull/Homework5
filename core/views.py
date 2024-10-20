@@ -1,16 +1,15 @@
-from django.http import HttpResponse
-from django.views.generic import View, ListView, DetailView, UpdateView, DeleteView, CreateView
+from django.http import HttpRequest, HttpResponse
 from django.urls import reverse_lazy
-
+from django.views.generic import CreateView, DeleteView, DetailView, UpdateView, View
 from django_filters.views import FilterView
 
-from core.models import Product
 from core import filters
+from core.models import Product
 
 
 class FirstView(View):
-    def get(self, request):
-        return HttpResponse(' Hi Django!')
+    def get(self, request: HttpRequest) -> HttpResponse:
+        return HttpResponse('Hi Django!')
 
 
 class ProductsList(FilterView):
@@ -31,7 +30,7 @@ class ProductCreate(CreateView):
     fields = ['name', 'price', 'status', 'image']
     template_name = 'produce_shelf/produce_form.html'
 
-    def get_success_url(self):
+    def get_success_url(self) -> str:
         return reverse_lazy('produce_detail', kwargs={'pk': self.object.pk})
 
 
@@ -40,7 +39,7 @@ class ProductUpdate(UpdateView):
     template_name = 'produce_shelf/produce_update.html'
     fields = ['name', 'price']
 
-    def get_success_url(self):
+    def get_success_url(self) -> str:
         return reverse_lazy('produce_shelf')
 
 
