@@ -3,7 +3,6 @@ from django.db import models
 from core import consts
 
 
-# Create your models here.
 class Customer(models.Model):
     name = models.CharField(verbose_name='Name', max_length=255, blank=False)
     email = models.EmailField(unique=True, blank=False)
