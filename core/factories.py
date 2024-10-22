@@ -1,8 +1,7 @@
 import factory
-
 from factory.django import ImageField
 
-from core.models import Customer, Product, Category, Order, OrderDetail, Review
+from core.models import Customer, Order, OrderDetail, Product, Review
 
 
 class CustomerFactory(factory.django.DjangoModelFactory):
